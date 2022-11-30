@@ -26,9 +26,9 @@ func starkpay_contract_class_hash() -> (res: felt) {
 }
 
 
-@storage_var
-func s() -> (res: felt) {
-}
+// @storage_var
+// func s() -> (res: felt) {
+// }
 
 @event
 func StarkPayCreated(token: felt, starkpay: felt) {
@@ -54,8 +54,7 @@ func createLlamaPayContract{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, rang
         deploy_from_zero=0,
     );
 
-
-
+    return (starkpaycontract = starkpaycontract);
     //     // Append the new contract address to the array of deployed contracts
     //     uint256 index = getLlamaPayContractCount;
     //     getLlamaPayContractByIndex[index] = llamaPayContract;
@@ -67,19 +66,19 @@ func createLlamaPayContract{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, rang
     
 }
 
-@external
-func getLlamaPayContractByToken{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
-    token: felt
-) -> (predictedAddress: felt, isDeployed: felt) {
+// @external
+// func getLlamaPayContractByToken{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(
+//     token: felt
+// ) -> (predictedAddress: felt, isDeployed: felt) {
 
-    // predictedAddress = address(uint160(uint256(keccak256(abi.encodePacked(
-    //         bytes1(0xff),
-    //         address(this),
-    //         bytes32(uint256(uint160(_token))),
-    //         INIT_CODEHASH
-    //     )))));
-    // isDeployed = predictedAddress.code.length != 0;
-}
+//     // predictedAddress = address(uint160(uint256(keccak256(abi.encodePacked(
+//     //         bytes1(0xff),
+//     //         address(this),
+//     //         bytes32(uint256(uint160(_token))),
+//     //         INIT_CODEHASH
+//     //     )))));
+//     // isDeployed = predictedAddress.code.length != 0;
+// }
 
 
 
