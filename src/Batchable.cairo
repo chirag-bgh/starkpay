@@ -5,3 +5,4 @@
 namespace IERC20Permit{
     func permit(input) -> (output) {}
     }
+
